@@ -1,0 +1,20 @@
+{
+  "name": "financas",
+  "version": "1.0.0",
+  "description": "Aplicação web de finanças",
+  "homepage": "https://github.com/BAH1A/app-financas#readme",
+  "bugs": {
+    "url": "https://github.com/BAH1A/app-financas/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BAH1A/app-financas.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev":"node --watch src/server.js"
+  }
+}
