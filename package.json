@@ -15,6 +15,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "dev":"node --watch src/server.js"
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "fastify": "^5.9.0"
   }
 }
