@@ -3,7 +3,7 @@ const server = require('fastify')({ logger: false })
 
 //Rotas
 server.get('/', async function handler(request, reply) {
-    return { hello:'world'}
+    return {Hello:"BAHIA"}
 })
 
 

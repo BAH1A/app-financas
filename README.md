@@ -13,7 +13,7 @@ Para atingir os meus objetivos terei que fazer:
         - Schema
     - Rotas da API
         - Rota que cria movimentação
-        - CRUD basico
+        - CRUD basico 
 
 
 # Iniciando o Projeto
