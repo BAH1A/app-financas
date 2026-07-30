@@ -1,15 +1,43 @@
 ( async () => {
     
-    const database = require('./db');
-    const ProdutoTest = require('./produtotest');
+    const database = require('./Connection/db');
+    const Transations = require('./Models/transations');
     await database.sync();
 
-    /*const novoProduto = await ProdutoTest.create({
-        nome: "Macarrao",
-        preco: 5
+    /*const newTransation = await Transations.create({
+        type: 'despeza',
+        transation: "Energia",
+        price: 249.23,
+        category: 'Casa',
+        data: '2026-07-23'
     })*/
-    const produtos = await ProdutoTest.findAll();
-    console.log(produtos)
+    
+    const transations = await Transations.findAll();
+    console.log(transations)
 })();
 
-/*reference: https://www.youtube.com/watch?v=g5ij7NIPR2s
+/*  transation: {
+        type: STRING,
+        allowNull: false
+    },
+    price: {
+        type: DECIMAL,
+        allowNull: false
+    },
+    category: {
+        type: DECIMAL,
+        allowNull: false,
+    },
+    status: {
+        type: BOOLEAN,
+        defaultValue: false,
+    },
+    note: {
+        type: DECIMAL
+    },
+    data: {
+        type: DATE,
+        //allowNull: false
+    }
+        
+/*reference: https://www.youtube.com/watch?v=g5ij7NIPR2s-*/
