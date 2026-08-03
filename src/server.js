@@ -1,20 +1,26 @@
-const server = require('fastify')({ logger: false })
-
+const express = require('express')
+const app = express()
+const router = require('./routes')
+app.use(express.json())
 
 //Rotas
-server.get('/', async function handler(request, reply) {
-    return {Hello:"BAHIA"}
+app.use(router)
+
+// Run the server!
+const porta = 8080
+
+app.listen(porta, ()=>{
+  console.log(`Servidor online, no endereço: http://localhost:${porta}`)
 })
 
 
-// Run the server!
-const porta = 9082
-server.listen({ port: porta }, (err) => {
+
+/*app.listen({ port: porta }, (err) => {
   if (err) {
-    server.log.error(err)
+    app.log.error(err)
     process.exit(1)
   }
   else{
     console.log(`Servidor online, no endereço: http://localhost:${porta}`)
   }
-})
+})*/
