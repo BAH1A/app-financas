@@ -1,26 +1,22 @@
 const express = require('express')
 const app = express()
-const router = require('./routes')
 app.use(express.json())
 
 //Rotas
-app.use(router)
+const usuarios = require('./routes/usuarioRoute.js')
+const receitas = require('./routes/receitaRoute.js')
+const despesas = require('./routes/despesaRoute.js')
 
-// Run the server!
-const porta = 8080
+app.use(usuarios)
+app.use(receitas)
+app.use(despesas)
 
-app.listen(porta, ()=>{
-  console.log(`Servidor online, no endereço: http://localhost:${porta}`)
-})
-
-
-
-/*app.listen({ port: porta }, (err) => {
-  if (err) {
-    app.log.error(err)
-    process.exit(1)
-  }
-  else{
+async function start() {
+  const dbSetup = require('../database/setup/dbSetup.js')
+  await dbSetup
+  
+  const porta = 8080
+  app.listen(porta, ()=>{// Run the server!
     console.log(`Servidor online, no endereço: http://localhost:${porta}`)
-  }
-})*/
+  });  
+}start();

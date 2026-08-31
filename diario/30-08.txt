@@ -1,0 +1,17 @@
+criei dia 30 do 08 a estrutura basica de diretórios ./src onde destinei 
+uma pasta controllers, repository, routes e services.
+
+a ideia é criar uma organização e responsabilização por camadas onde:
+- routes da acesso as requisições que chegam via api pelo navegador e mobile
+- controllers orquestra os dados  que chegou na routes
+- service faz a validação dos dados
+- repository pega esses dados e manda pro banco de dados
+
+terminei o dia criando o primeiro repository: userRepository.js, que nada
+mais é que uma classe com varios metodos, sendo eles:
+    - newUser(data), cria novos usuario dentro da tabela
+    - updateNomeCompleto(id, novoNome, novoSobre), atualiza campos nome e sobrenome com base no ID da tabela
+    - updateEmail(id, novoEmail) e updateSenha(id, novaSenha) faz o mesmo
+
+acheei um pouco dificil e pedi ajuda a IA mas logo me arrependi, estou tentando fazer isso na unha
+para melhor absorção de conhecimento, alem disso estou fazendo esse diario de bordo pra tentar me recordar no futuro
