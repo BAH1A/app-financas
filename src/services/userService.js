@@ -1,7 +1,7 @@
 const userRepository = require('../repository/userRepository.js')
 const AppError = require('../utils/errorHandler.js')
 
-class userService {
+class UserService {
     async createUser (userData){
         const nome = userData.nome
         const sobrenome = userData.sobrenome
@@ -18,9 +18,9 @@ class userService {
         const userToCreate = {
             nome: nome.trim(),
             sobrenome: sobrenome.trim(),
-            email: email.toLowerCase().trim()
-            //senha: hashedPassword torna criptografada
-        }
+            email: email.toLowerCase().trim(),
+            senha: senha
+        };
         const createUser = await userRepository.createUser(userToCreate)
         return createUser
     }
@@ -32,4 +32,4 @@ class userService {
         return user;
     }
 
-} module.exports = new userRepository();
+} module.exports = new UserService();

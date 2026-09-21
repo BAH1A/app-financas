@@ -11,6 +11,11 @@ app.use(usuarios)
 app.use(receitas)
 app.use(despesas)
 
+const userRoutes = require('./routes/userRouces.js')
+const { errorHandler } = require('./utils/errorHandler');
+app.use('/api', userRoutes)
+
+
 async function start() {
   const dbSetup = require('../database/setup/dbSetup.js')
   await dbSetup

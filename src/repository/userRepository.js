@@ -1,7 +1,7 @@
 const connDatabase = require('../../database/Connection/db.js')
 
 class userRepository {
-    async newUser(data) {
+    async createUser(data) {
 
         const nome = data.nome
         const sobrenome = data.sobrenome
